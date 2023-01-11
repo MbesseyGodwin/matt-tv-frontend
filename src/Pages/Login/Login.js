@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Person from "@material-ui/icons/Person";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setUserName] = useState("");
@@ -86,6 +86,7 @@ const Login = () => {
             </div>
           </form>
         </div>
+        <Link className="btn btn-sm btn-primary" to={`/users`}>users</Link>
       </div>
     </div>
   );

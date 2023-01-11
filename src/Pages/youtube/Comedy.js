@@ -1,4 +1,7 @@
 import React from "react";
+import ReactPlayer from 'react-player/youtube'
+
+ <ReactPlayer url='https://www.youtube.com/watch?v=IpYJjVw6wjU&ab_channel=fotios' />
 
 const Comdey = () => {
   return (

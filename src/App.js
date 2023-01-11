@@ -11,6 +11,7 @@ import { Upload } from "./Pages/Uploads/Upload";
 import { Container } from "@material-ui/core";
 import Welcome from "./Pages/Home/Welcome";
 import Comedy from "./Pages/youtube/Comedy";
+import Users from "./Pages/Users/Users";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/upload" component={Upload} />
             <Route path="/comedy" component={Comedy} />
+            <Route path="/users">
+              <Users />
+            </Route>
           </Switch>
         </Container>
       </div>

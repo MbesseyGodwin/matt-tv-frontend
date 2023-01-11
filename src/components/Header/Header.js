@@ -31,7 +31,7 @@ const Header = () => {
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
-          // showLabels
+          showLabels
           className={classes.root}
         >
           <BottomNavigationAction
