@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player/youtube'
 
 const Comdey = () => {
   return (
-    <div className="container text-center">
+    <div className="container-fluid text-center">
       <h3 className="h3">MATT-TV COMEDY</h3>
       <hr />
       <div class="row">

@@ -1,0 +1,8 @@
+@media (max-width: 420px) {
+    /* styling for the main segment */
+    main {
+        display: inline;
+        grid-template-columns: auto;
+        padding: 10px;
+    }
+}

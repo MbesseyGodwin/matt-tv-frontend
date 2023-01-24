@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Person from "@material-ui/icons/Person";
-import { useHistory, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loginAuth, setLoginAuth] = useState(true);
   const [submitValue, setSubmitValue] = useState("Login Now");
-  let history = useHistory();
+  let navigate = useNavigate();
 
   function validateFormFields() {
     if (loginAuth !== true) {
@@ -24,7 +24,7 @@ const Login = () => {
     event.preventDefault();
     if (username === "MATTHEW" && password === "123321") {
       console.log(username);
-      history.push("/upload");
+      navigate("/videos");
     } else {
       setSubmitValue('Failed Try Again')
       setLoginAuth(false);
@@ -86,7 +86,6 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <Link className="btn btn-sm btn-primary" to={`/users`}>users</Link>
       </div>
     </div>
   );

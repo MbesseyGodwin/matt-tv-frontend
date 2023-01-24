@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import SimpleBottomNavigation from "./components/MainNav";
@@ -12,30 +12,36 @@ import { Container } from "@material-ui/core";
 import Welcome from "./Pages/Home/Welcome";
 import Comedy from "./Pages/youtube/Comedy";
 import Users from "./Pages/Users/Users";
+import VideoList from "./Pages/videos/VideoList";
+import CreateVideo from "./Pages/videos/CreateVideo";
+import EditVideo from "./Pages/videos/EditVideo";
+import AdminProfile from "./Pages/Accounts/AdminProfile";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
       <div className="app">
         <Container>
-          <Switch>
-            <Route path="/" component={Welcome} exact />
-            <Route path="/trending" component={Trending} />
-            <Route path="/movies" component={Movies} />
-            <Route path="/series" component={Series} />
-            <Route path="/search" component={Search} />
-            <Route path="/login" component={Login} />
-            <Route path="/upload" component={Upload} />
-            <Route path="/comedy" component={Comedy} />
-            <Route path="/users">
-              <Users />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Welcome />} exact />
+            <Route path="/trending" element={<Trending />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/series" element={<Series />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/comedy" element={<Comedy />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/videos" element={<VideoList />} />
+            <Route path="/videos/create" element={<CreateVideo />} />
+            <Route path="/videos/edit" element={<EditVideo />} />
+            <Route path="/accounts" element={<AdminProfile />} />
+          </Routes>
         </Container>
       </div>
       <SimpleBottomNavigation />
-    </BrowserRouter>
+    </Router>
   );
 }
 
