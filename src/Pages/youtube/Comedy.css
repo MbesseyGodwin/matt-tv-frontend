@@ -1,3 +1,16 @@
 /* iframe {
     width: 0;
 } */
+
+
+/* Gradient color1 - color2 - color1 */
+
+hr.style-hr {
+    height: 3px;
+    background: #000000;
+    opacity: 1;
+    /* margin: 0; */
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}

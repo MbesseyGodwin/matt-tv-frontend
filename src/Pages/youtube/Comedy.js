@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import ReactPlayer from "react-player/youtube";
+// import ReactPlayer from "react-player/youtube";
+import MovieIcon from "@material-ui/icons/Movie";
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ShareIcon from '@mui/icons-material/Share';
 import "./Comedy.css";
 
-{
-  /* <ReactPlayer url="https://www.youtube.com/watch?v=IpYJjVw6wjU&ab_channel=fotios" />; */
-}
+/* <ReactPlayer url="https://www.youtube.com/watch?v=IpYJjVw6wjU&ab_channel=fotios" />; */
 
-const Video = (props) => <div>{props.video.videoName}</div>;
+// const Video = (props) => <div>{props.video.videoName}</div>;
 
 export default function Comedy() {
   const [videos, setVideos] = useState([]);
@@ -37,8 +39,10 @@ export default function Comedy() {
     return videos.map((video) => {
       return (
         <div className="col-lg-4 col-sm-12">
-          <Video video={video} key={video._id} />
+          {/* <Video video={video} key={video._id} /> */}
           <iframe
+          className="p-2"
+            key={video._id}
             width=""
             height="315"
             src={`https://www.youtube.com/embed/${video.videoName}`}
@@ -47,6 +51,12 @@ export default function Comedy() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
+          <div className="container d-flex justify-content-evenly" style={{}}>
+            <a href="#" className="btn btn-sm btn-primary mx-1"><SubscriptionsIcon fontSize="small" /> subscribe</a>
+            <a href="#" className="btn btn-sm btn-warning mx-1"><ThumbUpIcon fontSize="small" /> like</a>
+            <a href="#" className="btn btn-sm btn-success mx-1"><ShareIcon fontSize="small" /> share</a>
+          </div>
+          <hr  class="style-hr"/>
         </div>
       );
     });
@@ -54,12 +64,11 @@ export default function Comedy() {
 
   // This following section will display the table with the videos of individuals.
   return (
-    <div className="container-fluid text-center">
-      <h3 className="h3">MATT-TV COMEDY</h3>
-      <hr />
+    <div className="container-fluid text-center bg-light">
+      <p className="text-dark h6">MATT-TV COMEDY</p>
+      <hr class="style-hr"/>
       <div class="row">
         {videoList()}
-        <hr />
       </div>
     </div>
   );

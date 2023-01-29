@@ -1,7 +1,8 @@
 import "./Header.css";
 // import icons
 import Home from "@material-ui/icons/Home";
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
@@ -24,7 +25,7 @@ const Header = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const navigate = useNavigate();
-  
+
   return (
     <header className="container-fluid header">
       <div className="d-flex justify-content-around">
@@ -41,6 +42,13 @@ const Header = () => {
             style={{ color: "white" }}
             label="Home"
             icon={<Home />}
+          />
+
+          <BottomNavigationAction
+            onClick={() => navigate("/comedy")}
+            style={{ color: "white" }}
+            label="Comedy"
+            icon={<PlayCircleIcon />}
           />
 
           <BottomNavigationAction
