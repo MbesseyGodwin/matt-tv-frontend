@@ -3,7 +3,7 @@ import Person from "@material-ui/icons/Person";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
-  const [username, setUserName] = useState("");
+  const [username, setUserName] = useState("MATTHEW");
   const [password, setPassword] = useState("");
   const [loginAuth, setLoginAuth] = useState(true);
   const [submitValue, setSubmitValue] = useState("Login Now");
